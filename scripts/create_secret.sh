@@ -1,0 +1,1 @@
+openssl rand -out openssl-secret.txt -hex 64
