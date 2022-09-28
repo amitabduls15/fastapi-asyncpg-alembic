@@ -1,4 +1,6 @@
 # fastapi-asyncpg-alembic
+## Depedency
+All of depedency is available in *requrements.txt* file. This project is developing with python3.7 programming leanguage.
 
 ## Project Structure
     ./
@@ -61,6 +63,7 @@ cp .env.example .env
 
 
 ## DB Migration
+Metadata for database is there in repository folder.
 ### First Migrations
 
 ```bash
@@ -71,8 +74,8 @@ alembic revision --autogenerate -m "init"
 alembic upgrade head
 ```
 
-
-## Run The application
+## Deployment
+### Run The application
 
 Using Makefile to setup development
 
