@@ -13,6 +13,3 @@ def init(env_file: str):
     env = Env(env_file)
     databaseConfig.load(env)
     applicationConfig.load(env)
-
-
-init('.env')

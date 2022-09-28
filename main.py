@@ -3,14 +3,19 @@ import sys
 
 from fastapi import FastAPI
 import uvicorn
-from configs import applicationConfig, databaseConfig
+import configs
 
+import configs
+
+config_name = '.env'
+configs.init(config_name)
+
+from configs import applicationConfig, databaseConfig
 
 from api.auth import auth_router
 from db.db import init_db
 
 app = FastAPI()
-
 
 app.include_router(auth_router)
 
