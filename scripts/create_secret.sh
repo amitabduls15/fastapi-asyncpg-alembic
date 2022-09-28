@@ -1,1 +1,1 @@
-openssl rand -out openssl-secret.txt -hex 64
+openssl rand -out scripts/openssl-secret.txt -hex 64
