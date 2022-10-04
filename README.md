@@ -5,7 +5,7 @@ All of depedency is available in *requrements.txt* file. This project is develop
 ## Project Structure
     ./
     ├── alembic.ini
-    ├── api                     # Folder contains controller endpoints
+    ├── deliveries                     # Folder contains controller endpoints
     │   └── auth
     │       ├── controller.py
     │       ├── __init__.py
@@ -13,9 +13,10 @@ All of depedency is available in *requrements.txt* file. This project is develop
     ├── configs                 # Folder contains all configs
     │   ├── application.py
     │   ├── database.py
-    │   ├── __init__.py
-    ├── db                      # Folder db tools
-    │   └── db.py
+    │   └── __init__.py
+    ├── datasource                      # Folder db tools
+    │    └── db
+    │       └── async_pg.py
     ├── LICENSE
     ├── main.py                 # Main Program             
     ├── migrations              # Folder auto generating from alembic revision migrations
@@ -23,6 +24,7 @@ All of depedency is available in *requrements.txt* file. This project is develop
     │   ├── README
     │   ├── script.py.mako
     │   └── versions
+    │        └── __init__.py
     ├── pkg                     # Folder additional package to extend feature
     │   └── env
     │       └──  __init__.py
