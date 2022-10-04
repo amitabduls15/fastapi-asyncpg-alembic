@@ -12,7 +12,9 @@ import configs
 config_name = '.env'
 configs.init(config_name)
 from configs import databaseConfig
+
 from repository.user.models import *
+from repository.reff_role.models import *
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

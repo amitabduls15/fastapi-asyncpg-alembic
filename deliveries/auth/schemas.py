@@ -13,6 +13,7 @@ class UserLoginSchema(BaseModel):
 class UserInputSchema(UserLoginSchema):
     password2: str
     email: EmailStr
+    role_id: int
 
     @validator('password2')
     def password_match(cls, v, values, **kwargs):
@@ -26,6 +27,7 @@ class UserData(BaseModel):
     username: str
     email: EmailStr
     created_at: datetime.datetime
+    role_id: int
 
 
 class UserChangePasswordInputSchema(BaseModel):

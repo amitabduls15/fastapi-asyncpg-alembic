@@ -8,7 +8,7 @@ from starlette import status
 
 from sqlalchemy.ext.asyncio import AsyncSession
 from datasource.db.async_pg import get_session
-from repository.user import find_user
+from repository.user import repository_user
 from deliveries.auth.schemas import UserData
 
 from configs import applicationConfig
@@ -55,7 +55,7 @@ class AuthHandler:
         if username is None:
             raise credentials_exception
 
-        user = await find_user(username, session)
+        user = await repository_user.find_by_username(username, session)
 
         if user is None:
             raise credentials_exception
@@ -63,4 +63,5 @@ class AuthHandler:
         user = user[0]
         return UserData(user_id=user.user_id, username=user.username,
                         email=user.email,
-                        created_at=user.created_at)
+                        created_at=user.created_at, role_id=user.role_id)
+
