@@ -12,7 +12,6 @@ DATABASE_URL = databaseConfig.url
 engine = create_async_engine(DATABASE_URL, echo=True, future=True)
 
 
-
 async def init_db():
     async with engine.begin() as conn:
         # await conn.run_sync(SQLModel.metadata.drop_all)

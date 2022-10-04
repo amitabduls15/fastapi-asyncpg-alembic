@@ -7,9 +7,9 @@ import jwt
 from starlette import status
 
 from sqlalchemy.ext.asyncio import AsyncSession
-from db.db import get_session
+from datasource.db.async_pg import get_session
 from repository.user import find_user
-from api.auth.schemas import UserData
+from deliveries.auth.schemas import UserData
 
 from configs import applicationConfig
 

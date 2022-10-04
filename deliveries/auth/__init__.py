@@ -1,13 +1,12 @@
-from fastapi import APIRouter, HTTPException, Security, security, Depends
-from fastapi.security import HTTPAuthorizationCredentials
+from fastapi import APIRouter, HTTPException, Depends
 from starlette.responses import JSONResponse
-from starlette.status import HTTP_201_CREATED, HTTP_404_NOT_FOUND
+from starlette.status import HTTP_201_CREATED
 
-from api.auth.controller import AuthHandler
-from api.auth.schemas import *
+from deliveries.auth.controller import AuthHandler
+from deliveries.auth.schemas import *
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from db.db import get_session
+from datasource.db.async_pg import get_session
 from repository.user.models import User
 from repository.user import select_all_users, find_user, update_password_user
 

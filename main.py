@@ -1,19 +1,15 @@
-import os
-import sys
-
 from fastapi import FastAPI
 import uvicorn
-import configs
 
 import configs
 
 config_name = '.env'
 configs.init(config_name)
 
-from configs import applicationConfig, databaseConfig
+from configs import applicationConfig
 
-from api.auth import auth_router
-from db.db import init_db
+from deliveries.auth import auth_router
+from datasource.db.async_pg import init_db
 
 app = FastAPI()
 

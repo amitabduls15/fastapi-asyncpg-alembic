@@ -1,8 +1,8 @@
 from fastapi import Depends
-from sqlmodel import select, update
+from sqlmodel import select
 from sqlmodel.ext.asyncio.session import AsyncSession
 
-from db.db import get_session
+from datasource.db.async_pg import get_session
 from repository.user.models import User
 
 
