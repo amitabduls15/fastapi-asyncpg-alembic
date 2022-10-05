@@ -1,6 +1,6 @@
 # fastapi-asyncpg-alembic
-## Depedency
-All of depedency is available in *requrements.txt* file. This project is developing with python3.7 programming leanguage.
+## Dependency
+All dependency is available in *requirements.txt* file. This project is developing with python3.7 programming language.
 
 ## Project Structure
     ./
@@ -57,6 +57,7 @@ cp .env.example .env
 | `SECRET_KEY_APPS` | Secret key for jwt      | string                       | ✓        |
 | `PORT_APPS`       | Port apps while running | int, Default: 5000           |          |
 | `HOST_APPS`       | Host apps while running | string, Default: 'localhost' |          |
+| `DOMAIN_APPS`     | Domain apps deployed    | string                       | ✓        |
 | `HOST_DB`         | Server port             | Int                          | ✓        |
 | `NAME_DB`         | Name database           | String                       | ✓        |
 | `USER_DB`         | User database           | String                       | ✓        |
