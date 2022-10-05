@@ -10,8 +10,6 @@ configs.init(config_name)
 from configs import applicationConfig
 
 from deliveries.auth import auth_router
-from deliveries.reference import reference_router
-from deliveries.naval import naval_router
 from datasource.db.async_pg import init_db
 
 app = FastAPI()
@@ -31,8 +29,6 @@ app.add_middleware(
 )
 
 app.include_router(auth_router, prefix='/auth')
-app.include_router(reference_router, prefix='/ref')
-app.include_router(naval_router, prefix='/naval')
 
 
 @app.on_event("startup")
