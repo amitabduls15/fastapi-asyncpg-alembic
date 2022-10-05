@@ -13,7 +13,6 @@ class UserLoginSchema(BaseModel):
 class UserInputSchema(UserLoginSchema):
     password2: str
     email: EmailStr
-    role_id: int
 
     @validator('password2')
     def password_match(cls, v, values, **kwargs):
@@ -31,7 +30,8 @@ class UserData(BaseModel):
 
 
 class UserChangePasswordInputSchema(BaseModel):
-    new_password: str = Field(max_length=256, min_length=6)
+    old_password: str
+    new_password: str
     confirm_password: str
 
     @validator('confirm_password')

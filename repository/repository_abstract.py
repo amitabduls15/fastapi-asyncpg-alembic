@@ -21,9 +21,10 @@ class RepositoryAbstract:
         return res_first
 
     async def delete_by_id(self, id_, session: AsyncSession = Depends(get_session)):
-        data = await self.find_by_id(id_, session)
-        await session.delete(data)
-        await session.commit()
+        all_data = await self.find_by_id(id_, session)
+        for data in all_data:
+            await session.delete(data)
+            await session.commit()
 
     @staticmethod
     async def insert_one(data, session: AsyncSession = Depends(get_session)):

@@ -61,7 +61,7 @@ class AuthHandler:
             raise credentials_exception
 
         user = user[0]
-        return UserData(user_id=user.user_id, username=user.username,
+        return UserData(user_id=user.id, username=user.username,
                         email=user.email,
                         created_at=user.created_at, role_id=user.role_id)
 

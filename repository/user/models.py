@@ -4,7 +4,7 @@ from typing import Optional, List
 from pydantic import validator, EmailStr
 from sqlmodel import SQLModel, Field, Relationship, Column, String
 
-from repository.reff_role.models import ReffRole
+from repository.ref_role.models import RefRole
 
 
 class User(SQLModel, table=True):
@@ -16,5 +16,5 @@ class User(SQLModel, table=True):
     created_at: datetime.datetime = datetime.datetime.now()
     update_at: Optional[datetime.datetime] = Field(nullable=True)
 
-    role_id: int = Field(nullable=False, foreign_key="reff_role.id")
-    role: Optional[ReffRole] = Relationship(back_populates="Users")
+    role_id: int = Field(nullable=False, foreign_key="ref_role.id")
+    role: Optional[RefRole] = Relationship(back_populates="Users")

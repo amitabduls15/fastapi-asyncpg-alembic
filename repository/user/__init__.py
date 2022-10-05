@@ -1,3 +1,5 @@
+import datetime
+
 from fastapi import Depends
 from sqlmodel import select
 from sqlmodel.ext.asyncio.session import AsyncSession
@@ -16,11 +18,12 @@ class RepositoryUser(RepositoryAbstract):
 
         return user
 
-    async def update_password(self, user_id, new_password, session: AsyncSession = Depends(get_session)):
+    async def update_password(self, user_id, new_hash_pwd, session: AsyncSession = Depends(get_session)):
         statement = select(self.model).where(self.model.id == user_id)
         res = await session.execute(statement)
         user = res.one()[0]
-        user.password = new_password
+        user.hash_pw = new_hash_pwd
+        user.update_at = datetime.datetime.utcnow()
         session.add(user)
         await session.commit()
 
